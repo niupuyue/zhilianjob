@@ -1,30 +1,33 @@
-<ion-view id="jobs">
-  <ion-header-bar class="headerbar">
+<ion-view id="home" cache-view="false">
+  <!--头部搜索栏-->
+  <div id="headerBar" class="headerBar">
     <div id="headerBar-bg"></div>
     <a class="headerBar-search">
       <span></span>
       <div>
-        <input  maxlength="20" autocomplete="true" value="搜索职位和公司"/>
+        <input  maxlength="20" autocomplete="true" value="美妆1元起 独家放价"/>
       </div>
     </a>
     <div class="headerBar-logo">
       <i></i>
     </div>
-  </ion-header-bar>
-  <ion-content>
+  </div>
+  <ion-content id="home-content" class="scroll-content" >
+
     <!-- 下拉刷新控件, pulling-text属性表示提示文字信息，on-refresh是刷新所触发的函数-->
     <ion-refresher pulling-text="下拉刷新" on-refresh="jobs_doRefresh()"></ion-refresher>
 
-    <!-- 幻灯图（轮播图） -->
-    <ion-slide-box auto-play="true">
-      <!-- 轮播数组 -->
-      <ion-slide ng-repeat="imgurl in images">
-        <div class="box">
-          <!-- 注意此处需要用到表达式 -->
-          <img ng-src="{{imgurl}}">
+    <!--头部滚动条-->
+    <div class="headerSlider">
+      <div id="headerSlider" class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" ng-repeat="imgurl in images">
+            <img ng-src="{{imgurl}}">
+          </div>
         </div>
-      </ion-slide>
-    </ion-slide-box>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col col-50">
@@ -54,6 +57,6 @@
         <h3>{{job.title}}</h3>
       </ion-item>
     </ion-list>
-  </ion-content>
 
+  </ion-content>
 </ion-view>

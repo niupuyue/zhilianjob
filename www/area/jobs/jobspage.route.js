@@ -8,7 +8,7 @@ angular.module("jobs.route",['jobspage.controller'])
         url: '/jobs',
         views:{
           'tab-jobs': {
-            templateUrl: 'area/jobs/jobspage.html',
+            templateUrl: 'area/jobs/jobspage2.html',
             controller: 'JobsCtrl'
           }
         }

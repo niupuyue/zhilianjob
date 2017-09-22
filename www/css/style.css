@@ -1,1 +1,6 @@
 /* Empty. Add your own CSS if you like */
+ion-view{
+  /*background-image:url('../img/common/bg960@2x.png');*/
+  background-color: #ccc;
+  background-size: 100% 100%;
+}
