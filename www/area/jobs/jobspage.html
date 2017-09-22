@@ -1,0 +1,49 @@
+<ion-header-bar>
+  <input type="text" placeholder="搜索职位或者公司">
+  <div class="buttons">
+    <button class="button button-clear row" ng-click="jobs_search()">
+      <i class="icon ion-qr-scanner col-90"></i>
+      <p>扫一扫</p>
+    </button>
+  </div>
+</ion-header-bar>
+<ion-content>
+  <!-- 下拉刷新控件, pulling-text属性表示提示文字信息，on-refresh是刷新所触发的函数-->
+  <ion-refresher pulling-text="下拉刷新" on-refresh="jobs_doRefresh()"></ion-refresher>
+
+  <!-- 幻灯图（轮播图） -->
+  <ion-slide-box  auto-play="true">
+    <!-- 轮播数组 -->
+    <ion-slide ng-repeat="imgurl in images">
+      <div class="box">
+        <!-- 注意此处需要用到表达式 -->
+        <img ng-src="{{imgurl}}">
+      </div>
+    </ion-slide>
+  </ion-slide-box>
+
+  <<div class="row">
+  <div class="col col-50">
+    <div class="item-avatar item-icon-right">
+      <img ng-src="{{content1.img}}">
+      <h2>{{content1.name}}</h2>
+      <p>{{content1.desc}}</p>
+    </div>
+  </div>
+  <div class="col col-50">
+    <div class="item-avatar item-icon-right">
+      <img ng-src="{{content1.img}}">
+      <h2>{{content1.name}}</h2>
+      <p>{{content1.desc}}</p>
+    </div>
+  </div>
+</div>
+
+  <!-- 使用列表 -->
+  <ion-list>
+    <!-- 列表的行控件 -->
+    <ion-item ng-repeat="job in jobs" ng-click="jobs_gotoDetail(job)">
+      <h3>{{job.title}}</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

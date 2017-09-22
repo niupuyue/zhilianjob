@@ -1,0 +1,20 @@
+<ion-header-bar class="bar-positive">
+  <div class="buttons">
+    <button class="button button-clear">EN</button>
+  </div>
+  <h2 class="title">简历</h2>
+  <div class="buttons">
+    <button class="button button-clear">隐私设置</button>
+  </div>
+</ion-header-bar>
+<img  src="">
+<div class="row">
+  <button class="button button-outline col-33 resume_btn">预览简历</button>
+  <button class="button button-outline col-33 resume_btn">刷新简历</button>
+  <button class="button button-outline col-34 resume_btn">置顶简历</button>
+</div>
+<ion-list>
+  <ion-item ng-repeat="item in items" class="">
+    <p class="resume_item_text">{{item.title}}</p>
+  </ion-item>
+</ion-list>
